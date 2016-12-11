@@ -1,26 +1,28 @@
 <header>
   <h1>{{title}}</h1>
-  <div> {{ (af.auth | async)?.uid }} </div>
   <button *ngIf="!(af.auth | async)" id="login" (click)="login()">LOGIN</button>
   <button *ngIf="af.auth | async" id="login" (click)="logout()">LOGOUT</button>
 </header>
 
-<section class="sidebar">
-  <h3>Chat Rooms</h3>
+<div *ngIf="af.auth | async">
+  <section class="sidebar">
+    <h3>Chat Rooms</h3>
 
-  <ul>
-    <li class="text" *ngFor="let room of rooms | async">
-      {{room.$value}}
-    </li>
-  </ul>
+    <ul>
+      <li class="text" *ngFor="let room of rooms | async">
+        {{room.$value}}
+      </li>
+    </ul>
 
-  <button class="light-button" id="add-room" (click)="addRoom()">+ ADD ROOM</button>
-</section>
+    <button class="light-button" id="add-room" (click)="addRoom()">+ ADD ROOM</button>
+  </section>
 
-<section class="messages">
-</section>
+  <section class="messages">
+    <!--<div> {{ (af.auth | async)?.uid }} </div>-->
+  </section>
 
-<section class="text-box">
-  <textarea class="entry-field" type="text" placeholder="Type here..."></textarea>
-  <button id="send">SEND</button>
-</section>
+  <section class="text-box">
+    <textarea class="entry-field" type="text" placeholder="Type here..."></textarea>
+    <button id="send">SEND</button>
+  </section>
+</div>
