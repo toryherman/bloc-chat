@@ -7,9 +7,10 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  items: FirebaseListObservable<any[]>;
+  title = 'Bloc Chat';
+  list: FirebaseListObservable<any[]>;
+  
   constructor(af: AngularFire) {
-    this.items = af.database.list('items');
+    this.list = af.database.list('/list');
   }
 }

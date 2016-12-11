@@ -1,9 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<section class="sidebar">
+  <h1>
+    {{title}}
+  </h1>
 
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.$value}}
-  </li>
-</ul>
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.$value}}
+    </li>
+  </ul>
+  
+  <button id="add-room">+ ADD ROOM</button>
+</section>
+
+<section class="messages">
+</section>
+
+<section class="text-box">
+  <textarea class="entry-field" type="text" placeholder="Type here..."></textarea>
+  <button id="send">SEND</button>
+</section>
