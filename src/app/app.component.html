@@ -9,12 +9,12 @@
   <h3>Chat Rooms</h3>
 
   <ul>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.$value}}
+    <li class="text" *ngFor="let room of rooms | async">
+      {{room.$value}}
     </li>
   </ul>
 
-  <button class="light-button" id="add-room">+ ADD ROOM</button>
+  <button class="light-button" id="add-room" (click)="addRoom()">+ ADD ROOM</button>
 </section>
 
 <section class="messages">

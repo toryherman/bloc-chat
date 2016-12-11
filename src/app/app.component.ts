@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,11 @@ import { AngularFire } from 'angularfire2';
 })
 export class AppComponent {
   title = 'Bloc Chat';
+  rooms: FirebaseListObservable<any>;
   
-  constructor(public af: AngularFire) {}
+  constructor(public af: AngularFire) {
+    this.rooms = af.database.list('/rooms');
+  }
   
   login() {
     this.af.auth.login();
@@ -17,5 +20,10 @@ export class AppComponent {
 
   logout() {
     this.af.auth.logout();
+  }
+
+  addRoom() {
+    let newRoom = prompt("Enter new room name");
+    this.rooms.push(newRoom);
   }
 }

@@ -28,6 +28,18 @@ section.sidebar {
   border-right: 1px solid #c4c4c4;
 }
 
+section.sidebar ul {
+  padding-left: 0;
+}
+
+section.sidebar ul li {
+  font-weight: 600;
+  list-style: none;
+  text-transform: uppercase;
+  line-height: 1.5rem;
+  color: #777;
+}
+
 section.messages {
   position: absolute;
   top: 80px;
