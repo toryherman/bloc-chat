@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { AngularFireModule } from 'angularfire2';
-import { RoomService } from './room.service';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDmruA_FhZEpwmFivUFxHbC5uNwp_6Lr_8",
@@ -14,6 +13,11 @@ export const firebaseConfig = {
   messagingSenderId: "680666668997"
 };
 
+export const myFirebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect
+}
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,9 +26,9 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [ RoomService ],
+  providers: [  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

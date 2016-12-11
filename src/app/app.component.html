@@ -1,15 +1,20 @@
+<header>
+  <h1>{{title}}</h1>
+  <div> {{ (af.auth | async)?.uid }} </div>
+  <button *ngIf="!(af.auth | async)" id="login" (click)="login()">LOGIN</button>
+  <button *ngIf="af.auth | async" id="login" (click)="logout()">LOGOUT</button>
+</header>
+
 <section class="sidebar">
-  <h1>
-    {{title}}
-  </h1>
+  <h3>Chat Rooms</h3>
 
   <ul>
     <li class="text" *ngFor="let item of items | async">
       {{item.$value}}
     </li>
   </ul>
-  
-  <button id="add-room">+ ADD ROOM</button>
+
+  <button class="light-button" id="add-room">+ ADD ROOM</button>
 </section>
 
 <section class="messages">

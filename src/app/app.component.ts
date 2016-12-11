@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,14 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class AppComponent {
   title = 'Bloc Chat';
-  list: FirebaseListObservable<any[]>;
   
-  constructor(af: AngularFire) {
-    this.list = af.database.list('/list');
+  constructor(public af: AngularFire) {}
+  
+  login() {
+    this.af.auth.login();
+  }
+
+  logout() {
+    this.af.auth.logout();
   }
 }

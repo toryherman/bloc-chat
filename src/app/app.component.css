@@ -1,48 +1,49 @@
-section.sidebar {
+header {
   position: absolute;
   top: 0;
   left: 0;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 0 1.5rem 0 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  line-height: 80px;
+}
+
+section.sidebar {
+  position: absolute;
+  top: 80px;
+  left: 0;
   width: 25%;
   background-color: #eaeaea;
-  height: 100%;
+  /*calculate height, subtract height of header*/
+  height: -webkit-calc(100% - (80px));
+  height: -moz-calc(100% - (80px));
+  height: calc(100% - (80px));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   border-right: 1px solid #c4c4c4;
 }
 
-button {
-  border: none;
-  border-radius: 3px;
-  height: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: #f9f9f9;
-  color: #777;
-  font-weight: 600;
-}
-
-button:focus {
-  outline: none;
-}
-
-button#add-room {
+section.messages {
   position: absolute;
-  bottom: 1.5rem;
-}
-
-button#send {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background-color: #777;
-  color: #f9f9f9;
+  top: 80px;
+  right: 0;
+  width: 75%;
+  /*calculate height, subtract height of header and text-box*/
+  height: -webkit-calc(100% - (80px + 200px));
+  height: -moz-calc(100% - (80px + 200px));
+  height: calc(100% - (80px + 200px));
 }
 
 section.text-box {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 25%;
+  height: 200px;
   width: 75%;
   padding: 0;
 }
@@ -60,6 +61,47 @@ textarea.entry-field:focus {
   outline: none;
 }
 
+button {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 3px;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #777;
+  color: #f9f9f9;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.light-button {
+  background-color: #f9f9f9;
+  color: #777;
+}
+
+button#login {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+
+button#add-room {
+  position: absolute;
+  bottom: 1.5rem;
+}
+
+button#send {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
 
 @media (max-width: 640px) {
   section.sidebar {
@@ -68,6 +110,15 @@ textarea.entry-field:focus {
   
   section.text-box {
     width: 100%;
+    height: 100px;
+  }
+  
+  section.messages {
+    width: 100%;
+    /*calculate height, subtract height of header and text-box*/
+    height: -webkit-calc(100% - (80px + 100px));
+    height: -moz-calc(100% - (80px + 100px));
+    height: calc(100% - (80px + 100px));
   }
   
   button#send {
