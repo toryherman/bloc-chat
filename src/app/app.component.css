@@ -5,11 +5,10 @@ header {
   height: 80px;
   width: 100%;
   border-bottom: 1px solid #c4c4c4;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.5rem;
 }
 
 header h1 {
-  margin: 0;
   line-height: 80px;
 }
 
@@ -23,8 +22,7 @@ section.sidebar {
   height: -webkit-calc(100% - (80px));
   height: -moz-calc(100% - (80px));
   height: calc(100% - (80px));
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 1.5rem;
   border-right: 1px solid #c4c4c4;
 }
 
@@ -73,6 +71,43 @@ textarea.entry-field:focus {
   outline: none;
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal .popup {
+  position: absolute;
+  padding: 1.5rem;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 200px;
+  transform: translate(-200px, -100px);
+  z-index: 100;
+  background-color: #f9f9f9;
+}
+
+.modal .popup h4 {
+  color: #777;
+}
+
+.modal .popup input {
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #c4c4c4;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+}
+
+.modal .popup button {
+  margin-right: 0.25rem;
+}
+
 button {
   font-family: 'Montserrat', sans-serif;
   border: none;
@@ -89,7 +124,7 @@ button:hover {
   cursor: pointer;
 }
 
-button:focus {
+button:focus, input:focus {
   outline: none;
 }
 

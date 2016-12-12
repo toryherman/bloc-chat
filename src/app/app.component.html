@@ -14,7 +14,7 @@
       </li>
     </ul>
 
-    <button class="light-button" id="add-room" (click)="addRoom()">+ ADD ROOM</button>
+    <button class="light-button" id="add-room" (click)="modal = true">+ ADD ROOM</button>
   </section>
 
   <section class="messages">
@@ -25,4 +25,14 @@
     <textarea class="entry-field" type="text" placeholder="Type here..."></textarea>
     <button id="send">SEND</button>
   </section>
+</div>
+
+<div *ngIf="modal" class="modal">
+  <div class="popup">
+    <h3>Create new room</h3>
+    <h4>Enter new room name</h4>
+    <input type="text" [(ngModel)]="roomName" autofocus>
+    <button (click)="modal = false">CANCEL</button>
+    <button (click)="addRoom()">SUBMIT</button>
+  </div>
 </div>

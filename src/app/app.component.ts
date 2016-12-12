@@ -9,9 +9,13 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class AppComponent {
   title = 'Bloc Chat';
   rooms: FirebaseListObservable<any>;
+  modal: boolean;
+  roomName: string;
   
   constructor(public af: AngularFire) {
     this.rooms = af.database.list('/rooms');
+    this.modal = false;
+    this.roomName = "";
   }
   
   login() {
@@ -23,7 +27,7 @@ export class AppComponent {
   }
 
   addRoom() {
-    let newRoom = prompt("Enter new room name");
-    this.rooms.push(newRoom);
+    this.rooms.push(this.roomName);
+    this.modal = false;
   }
 }
