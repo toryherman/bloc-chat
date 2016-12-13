@@ -9,7 +9,7 @@
     <h3>Chat Rooms</h3>
 
     <ul>
-      <li class="text" *ngFor="let room of rooms | async">
+      <li class="text" *ngFor="let room of rooms | async" (click)="setCurrentRoom(room.$key)">
         {{room.$value}}
       </li>
     </ul>
@@ -19,11 +19,16 @@
 
   <section class="messages">
     <!--<div> {{ (af.auth | async)?.uid }} </div>-->
+    <ul>
+      <li class="text" *ngFor="let message of messages | async">
+        {{message.username}}: {{message.content}}
+      </li>
+    </ul>
   </section>
 
   <section class="text-box">
-    <textarea class="entry-field" type="text" placeholder="Type here..."></textarea>
-    <button id="send">SEND</button>
+    <textarea class="entry-field" type="text" placeholder="Type here..." [(ngModel)]="currentMessage"></textarea>
+    <button id="send" (click)="sendMessage()">SEND</button>
   </section>
 </div>
 

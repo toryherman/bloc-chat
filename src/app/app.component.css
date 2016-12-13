@@ -38,6 +38,14 @@ section.sidebar ul li {
   color: #777;
 }
 
+section.sidebar ul li:hover {
+  cursor: pointer;
+}
+
+section.sidebar ul li.selected {
+  color: #007aed;
+}
+
 section.messages {
   position: absolute;
   top: 80px;
@@ -47,6 +55,17 @@ section.messages {
   height: -webkit-calc(100% - (80px + 200px));
   height: -moz-calc(100% - (80px + 200px));
   height: calc(100% - (80px + 200px));
+}
+
+section.messages ul {
+  padding: 1.5rem;
+}
+
+section.messages ul li {
+  font-family: "Arial", sans-serif;
+  list-style: none;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 section.text-box {
