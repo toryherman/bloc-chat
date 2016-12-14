@@ -10,11 +10,12 @@ export class AppComponent {
   title = 'Bloc Chat';
   rooms: FirebaseListObservable<any>;
   messages: FirebaseListObservable<any>;
+  chat: FirebaseListObservable<any>;
   modal: boolean;
   roomName: string;
   currentRoomId: string;
   currentMessage: string;
-  userName: string;
+  username: string;
   
   constructor(public af: AngularFire) {
     this.rooms = af.database.list('/rooms');
@@ -23,17 +24,15 @@ export class AppComponent {
     this.roomName = "";
     this.currentRoomId = "";
     this.currentMessage = "";
-    this.userName = "";
+    this.af.auth.subscribe(authData => this.setUser(authData));
   }
   
   login() {
     this.af.auth.login();
-    //this.userName = af.auth.subscribe( );
   }
 
   logout() {
     this.af.auth.logout();
-    this.userName = "";
   }
 
   addRoom() {
@@ -41,17 +40,30 @@ export class AppComponent {
     this.modal = false;
   }
 
-  setCurrentRoom(key) {
+  setUser(authData) {
+    if (authData) {
+      this.username = authData.google.displayName;
+    } else {
+      this.username = "";
+    }
+  }
+
+  setCurrentRoom(event, key) {
     this.currentRoomId = key;
-    console.log(key);
+    
+    if (document.querySelector('.selected')) {
+      document.querySelector('.selected').className = "";
+    }
+    
+    event.target.className = "selected";
   }
 
   sendMessage() {
-    if (this.currentRoomId !== "") {
+    if (this.currentRoomId !== "" && this.currentMessage !== "") {
       let message = {
-        username: "#",
+        username: this.username,
         content: this.currentMessage,
-        sentAt: "0:00",
+        sentAt: Date().toLocaleString(),
         roomId: this.currentRoomId
       };
       
