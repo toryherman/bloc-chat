@@ -44,9 +44,13 @@ export class AppComponent {
   }
 
   addRoom() {
-    this.rooms.push(this.roomName);
-    this.roomName = "";
-    this.modal = false;
+    if (this.roomName !== "") {
+      this.rooms.push(this.roomName);
+      this.roomName = "";
+      this.modal = false; 
+    } else {
+      alert("Please enter a room name.");
+    }
   }
 
   setCurrentRoom(event, key) {
@@ -57,6 +61,21 @@ export class AppComponent {
     }
     
     event.target.className = "selected";
+  }
+
+  onKeySubmit(event) {
+    //submit form when press enter
+    if (event.keyCode == 13) {
+      this.addRoom();
+    }
+  }
+
+  onKeySend(event) {
+    //send message when press enter without shift
+    if (event.keyCode == 13 && !event.shiftKey) {
+      event.preventDefault();
+      this.sendMessage(); 
+    }
   }
 
   sendMessage() {
