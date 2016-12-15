@@ -92,4 +92,12 @@ export class AppComponent {
       this.currentMessage = "";
     }
   }
+
+  toggleMenu() {
+    if (document.querySelector('.sidebar').id !== "expanded") {
+      document.querySelector('.sidebar').id = "expanded";
+    } else {
+      document.querySelector('.sidebar').id = "";
+    }
+  }
 }
