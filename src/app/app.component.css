@@ -68,8 +68,13 @@ section.messages ul li {
   line-height: 1.5rem;
 }
 
-section.messages ul li span.username {
+section.messages ul li span.username-me {
   color: #007aed;
+  font-weight: 800;
+}
+
+section.messages ul li span.username-you {
+  color: #db134c;
   font-weight: 800;
 }
 
@@ -89,6 +94,8 @@ textarea.entry-field {
   border-top: 1px solid #c4c4c4;
   padding: 0.5rem;
   padding-right: 8rem;
+  font-family: "Arial", sans-serif;
+  font-size: 0.65rem;
 }
 
 textarea.entry-field:focus {
