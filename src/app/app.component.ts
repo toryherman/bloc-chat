@@ -24,14 +24,15 @@ export class AppComponent {
     this.roomName = "";
     this.currentRoomId = "";
     this.currentMessage = "";
+    
     this.af.auth.subscribe(authData => {
       if (authData) {
         this.username = authData.google.displayName;
-        console.log(this.username);
       } else {
         this.username = "";
       }
     });
+    
   }
   
   login() {
@@ -44,6 +45,7 @@ export class AppComponent {
 
   addRoom() {
     this.rooms.push(this.roomName);
+    this.roomName = "";
     this.modal = false;
   }
 
