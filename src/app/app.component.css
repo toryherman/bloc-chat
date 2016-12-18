@@ -60,7 +60,6 @@ section.messages {
   height: -moz-calc(100% - (80px + 200px));
   height: calc(100% - (80px + 200px));
   overflow: scroll;
-  padding-bottom: 1.5rem;
 }
 
 section.messages ul {
@@ -162,7 +161,7 @@ button {
   font-family: 'Montserrat', sans-serif;
   border: none;
   border-radius: 3px;
-  height: 2rem;
+  height: 30px;
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: #777;
@@ -240,15 +239,16 @@ button#send {
   
   section.text-box textarea.entry-field {
     padding-right: 0.5rem;
+    height: 70px;
   }
   
   section.messages {
     width: 100%;
     top: 120px;
     /*calculate height, subtract height of header and text-box*/
-    height: -webkit-calc(100% - (80px + 100px));
-    height: -moz-calc(100% - (80px + 100px));
-    height: calc(100% - (80px + 100px));
+    height: -webkit-calc(100% - (120px + 100px));
+    height: -moz-calc(100% - (120px + 100px));
+    height: calc(100% - (120px + 100px));
   }
   
   button#send {
