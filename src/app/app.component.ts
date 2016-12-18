@@ -31,6 +31,7 @@ export class AppComponent {
       } else {
         this.username = "";
       }
+      console.log(this.username);
     });
     
   }
@@ -80,6 +81,8 @@ export class AppComponent {
 
   sendMessage() {
     if (this.currentRoomId !== "" && this.currentMessage !== "") {
+      console.log(this.currentMessage);
+      
       let message = {
         username: this.username,
         content: this.currentMessage,

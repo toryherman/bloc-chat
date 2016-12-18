@@ -59,8 +59,8 @@ section.messages {
   height: -webkit-calc(100% - (80px + 200px));
   height: -moz-calc(100% - (80px + 200px));
   height: calc(100% - (80px + 200px));
-  word-wrap: break-word;
   overflow: scroll;
+  padding-bottom: 1.5rem;
 }
 
 section.messages ul {
@@ -68,11 +68,20 @@ section.messages ul {
 }
 
 section.messages ul li {
-  font-family: "Arial", sans-serif;
   list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+section.messages ul li pre {
+  font-family: "Arial", sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
-  line-height: 1.5rem;
+  line-height: 1.2rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
 }
 
 section.messages ul li span.username-me {
@@ -216,7 +225,11 @@ button#send {
     visibility: hidden;
   }
   
-  section.sidebar#expanded button#add-room {
+  section.sidebar ul {
+    visibility: hidden;
+  }
+  
+  section.sidebar#expanded button#add-room, section.sidebar#expanded ul {
     visibility: visible;
   }
   

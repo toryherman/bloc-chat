@@ -21,7 +21,7 @@
     <ul *ngIf="currentRoomId !== ''">
       <li class="text" *ngFor="let message of messages | async">
         <template [ngIf]="currentRoomId === message.roomId">
-          <span [ngClass]="{'username-me': message.username === this.username, 'username-you': message.username !== this.username}">{{message.username}}:</span> ({{message.sentAt | date:"HH:mm"}}) {{message.content}}
+          <pre><span [ngClass]="{'username-me': message.username === this.username, 'username-you': message.username !== this.username}">{{message.username}}:</span> ({{message.sentAt | date:"HH:mm"}}) {{message.content}}</pre>
         </template>
       </li>
     </ul>
