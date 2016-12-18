@@ -1,0 +1,71 @@
+section.sidebar {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 25%;
+  background-color: #eaeaea;
+  /*calculate height, subtract height of header*/
+  height: -webkit-calc(100% - (80px));
+  height: -moz-calc(100% - (80px));
+  height: calc(100% - (80px));
+  padding: 1.5rem;
+  border-right: 1px solid #c4c4c4;
+  z-index: 10;
+}
+
+section.sidebar h3 {
+  margin-bottom: 1rem;
+}
+
+section.sidebar ul {
+  padding-left: 0;
+}
+
+section.sidebar ul li {
+  font-weight: 600;
+  list-style: none;
+  line-height: 1.5rem;
+  color: #777;
+}
+
+section.sidebar ul li:hover {
+  cursor: pointer;
+}
+
+section.sidebar ul li.selected {
+  color: #007aed;
+}
+
+@media (max-width: 640px) {
+  section.sidebar {
+    width: 100%;
+    height: 40px;
+    padding-top: 0.55rem;
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+    overflow: hidden;
+  }
+
+  section.sidebar#expanded {
+    /*calculate height, subtract height of header*/
+    height: -webkit-calc(100% - (80px));
+    height: -moz-calc(100% - (80px));
+    height: calc(100% - (80px));
+  }
+
+  section.sidebar button#add-room {
+    width: 100%;
+    border-radius: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+  }
+
+  section.sidebar ul {
+    visibility: hidden;
+  }
+
+  section.sidebar#expanded button#add-room, section.sidebar#expanded ul {
+    visibility: visible;
+  }
+}

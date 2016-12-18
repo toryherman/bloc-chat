@@ -1,0 +1,11 @@
+<section class="sidebar" (click)="toggleMenu()">
+  <h3>Chat Rooms</h3>
+
+  <ul>
+    <li class="text" *ngFor="let room of rooms | async" (click)="setCurrentRoom($event, room.$key)">
+      {{room.$value | uppercase}}
+    </li>
+  </ul>
+
+  <button class="light-button" id="add-room" (click)="modal = true">+ ADD ROOM</button>
+</section>

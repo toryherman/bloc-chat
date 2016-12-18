@@ -1,0 +1,44 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 99;
+}
+
+.modal .popup {
+  position: absolute;
+  padding: 1.5rem;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 200px;
+  transform: translate(-200px, -100px);
+  z-index: 100;
+  background-color: #f9f9f9;
+}
+
+.modal .popup h4 {
+  color: #777;
+}
+
+.modal .popup input {
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #c4c4c4;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+}
+
+.modal .popup button {
+  margin-right: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .modal .popup {
+    width: 300px;
+    transform: translate(-150px, -100px);
+  }
+}

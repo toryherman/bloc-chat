@@ -1,0 +1,12 @@
+<header>
+  <h1>{{title}}</h1>
+  <button *ngIf="!(af.auth | async)" id="login" (click)="login()">LOGIN</button>
+  <button *ngIf="af.auth | async" id="login" (click)="logout()">LOGOUT</button>
+</header>
+
+<div *ngIf="af.auth | async">
+  <sidebar></sidebar>
+  <messages></messages>
+  <textbox></textbox>
+  <modal></modal>
+</div>

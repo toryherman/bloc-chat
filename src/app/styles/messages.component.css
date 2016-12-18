@@ -1,0 +1,53 @@
+section.messages {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 75%;
+  /*calculate height, subtract height of header and text-box*/
+  height: -webkit-calc(100% - (80px + 200px));
+  height: -moz-calc(100% - (80px + 200px));
+  height: calc(100% - (80px + 200px));
+  overflow: scroll;
+}
+
+section.messages ul {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+section.messages ul li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+section.messages ul li pre {
+  font-family: "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+}
+
+section.messages ul li span.username-me {
+  color: #007aed;
+  font-weight: 800;
+}
+
+section.messages ul li span.username-you {
+  color: #db134c;
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  section.messages {
+    width: 100%;
+    top: 120px;
+    /*calculate height, subtract height of header and text-box*/
+    height: -webkit-calc(100% - (120px + 100px));
+    height: -moz-calc(100% - (120px + 100px));
+    height: calc(100% - (120px + 100px));
+  }
+}

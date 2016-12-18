@@ -2,8 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppComponent } from './app.component';
+
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+
+import { AppComponent } from './app.component';
+import { SidebarComponent } from './sidebar.component';
+import { MessagesComponent } from './messages.component';
+import { TextboxComponent } from './textbox.component';
+import { ModalComponent } from './modal.component';
+
+import { ChatService } from './services/chat.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDmruA_FhZEpwmFivUFxHbC5uNwp_6Lr_8",
@@ -20,7 +28,11 @@ export const myFirebaseAuthConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarComponent,
+    MessagesComponent,
+    TextboxComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,7 @@ export const myFirebaseAuthConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [  ],
+  providers: [ ChatService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

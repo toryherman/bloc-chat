@@ -1,0 +1,9 @@
+<div *ngIf="modal" class="modal">
+  <div class="popup">
+    <h3>Create new room</h3>
+    <h4>Enter new room name</h4>
+    <input type="text" [(ngModel)]="roomName" (keypress)="onKeySubmit($event)" autofocus>
+    <button (click)="modal = false">CANCEL</button>
+    <button (click)="addRoom()">SUBMIT</button>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<section class="text-box">
+  <textarea class="entry-field" type="text" placeholder="Type here..." [(ngModel)]="currentMessage" (keydown)="onKeySend($event)"></textarea>
+  <button id="send" (click)="sendMessage()">SEND</button>
+</section>
