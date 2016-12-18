@@ -6,10 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './sidebar.component';
-import { MessagesComponent } from './messages.component';
-import { TextboxComponent } from './textbox.component';
-import { ModalComponent } from './modal.component';
 
 import { ChatService } from './services/chat.service';
 
@@ -28,11 +24,7 @@ export const myFirebaseAuthConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidebarComponent,
-    MessagesComponent,
-    TextboxComponent,
-    ModalComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
