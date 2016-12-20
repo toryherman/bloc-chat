@@ -31,7 +31,6 @@ export class AppComponent {
       } else {
         this.username = "";
       }
-      console.log(this.username);
     });
     
   }
@@ -81,8 +80,6 @@ export class AppComponent {
 
   sendMessage() {
     if (this.currentRoomId !== "" && this.currentMessage !== "") {
-      console.log(this.currentMessage);
-      
       let message = {
         username: this.username,
         content: this.currentMessage,
@@ -93,6 +90,7 @@ export class AppComponent {
       this.messages.push(message);
 
       this.currentMessage = "";
+      this.scrollMessagesToBottom();
     }
   }
 
@@ -102,5 +100,10 @@ export class AppComponent {
     } else {
       document.querySelector('.sidebar').id = "";
     }
+  }
+
+  scrollMessagesToBottom() {
+    let messages = document.querySelector('.messages');
+    messages.scrollTop = messages.scrollHeight;
   }
 }
